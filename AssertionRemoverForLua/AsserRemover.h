@@ -6,6 +6,8 @@
 #include <filesystem>
 #include <vector>
 
+inline int removeAsserFromFile(std::filesystem::path pathToFile);
+inline int removeAsserFromDir(std::filesystem::path pathToDir);
 
 inline int startAsserRemover(std::filesystem::path pathToFile) {
 	// dir
