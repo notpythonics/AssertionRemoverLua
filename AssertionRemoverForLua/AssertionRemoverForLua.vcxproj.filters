@@ -19,8 +19,4 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="LuaSrc\luaFile" />
-    <None Include="LuaSrc\app.lua" />
-  </ItemGroup>
 </Project>
