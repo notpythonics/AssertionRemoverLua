@@ -44,11 +44,11 @@ void removeAsserFromDir(std::filesystem::path pathToDir) {
 
 int main(int argc, char* argv[]) {
 	if (argc != 2) {
-		std::cout << "Missing a path :0\n";
+		std::cout << "Missing a path.\n";
 		return -1;
 	}
 	else if(argc > 2){
-		std::cout << "Too many args :0\n";
+		std::cout << "Too many args.\n";
 		return -1;
 	}
 
@@ -56,12 +56,12 @@ int main(int argc, char* argv[]) {
 	pathToFile.make_preferred();
 	std::cout << "Preferred Path: " << pathToFile << '\n';
 	if (!std::filesystem::exists(pathToFile)) {
-		std::cout << "Invalid Path cutie :0\n";
+		std::cout << "Invalid Path.\n";
 		return -1;
 	}
 
 	removeAsserFromFile(pathToFile);
 
-	std::cout << "\nDone beautiful <3\n"
-		<< numAssers << " assers were removed my beloved..\n";
+	std::cout << "\nDone.\n"
+		<< numAssers << " assertions were removed.\n";
 }
