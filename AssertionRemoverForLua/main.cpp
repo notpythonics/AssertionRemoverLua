@@ -44,11 +44,11 @@ void removeAsserFromDir(std::filesystem::path pathToDir) {
 
 int main(int argc, char* argv[]) {
 	if (argc != 2) {
-		std::cout << "Missing a path cutie :0\n";
+		std::cout << "Missing a path :0\n";
 		return -1;
 	}
-	else {
-		std::cout << "Too many args cutie :0\n";
+	else if(argc > 2){
+		std::cout << "Too many args :0\n";
 		return -1;
 	}
 
@@ -62,6 +62,6 @@ int main(int argc, char* argv[]) {
 
 	removeAsserFromFile(pathToFile);
 
-	std::cout << "\nDone cutie <3\n"
+	std::cout << "\nDone beautiful <3\n"
 		<< numAssers << " assers were removed my beloved..\n";
 }
