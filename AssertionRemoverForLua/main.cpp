@@ -25,10 +25,10 @@ void removeAsserFrom(std::filesystem::path pathToFile) {
 	std::ifstream ifile{ c_pathToFile };
 	// read non-asserted lines to vector
 	for (std::string line; std::getline(ifile, line);) {
-		if (!(line.find("assert") != line.npos)) {
-			linesWithoutAsser.push_back(line);
+		if (line.find("assert") != line.npos)
 			++numAssers;
-		}
+		else
+			linesWithoutAsser.push_back(line);
 	}
 
 	ifile.close();
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
 		std::cout << "Missing a path.\n";
 		return -1;
 	} // just one arg
-	else if(argc > 2){
+	else if (argc > 2) {
 		std::cout << "Too many args.\n";
 		return -1;
 	}
