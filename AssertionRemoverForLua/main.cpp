@@ -8,7 +8,7 @@ int numAssers{};
 
 void removeAsserFromDir(std::filesystem::path);
 
-void removeAsserFromFile(std::filesystem::path pathToFile) {
+void removeAsserFrom(std::filesystem::path pathToFile) {
 	// store lines that have no assertions
 	std::vector<std::string> linesWithoutAsser{};
 	linesWithoutAsser.reserve(20);
@@ -43,7 +43,7 @@ void removeAsserFromDir(std::filesystem::path pathToDir) {
 	// traverse the dir
 	std::filesystem::directory_iterator luaRootDir_iter{ pathToDir };
 	for (const std::filesystem::directory_entry& entry : luaRootDir_iter) {
-		removeAsserFromFile(entry.path());
+		removeAsserFrom(entry.path());
 	}
 }
 
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
 	if (argc != 2) {
 		std::cout << "Missing a path.\n";
 		return -1;
-	}
+	} // just one arg
 	else if(argc > 2){
 		std::cout << "Too many args.\n";
 		return -1;
@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	// start
-	removeAsserFromFile(pathToFile);
+	removeAsserFrom(pathToFile);
 
 	std::cout << "\nDone.\n"
 		<< numAssers << " assertions were removed.\n";
