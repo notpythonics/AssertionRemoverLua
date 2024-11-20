@@ -46,6 +46,8 @@ inline int removeAsserFromFile(const std::filesystem::path& pathToFile) {
 	for (const auto& line : linesWithoutAsser)
 		ofile << line << '\n';
 
+	ofile.close();
+
 	return numAssers;
 }
 
