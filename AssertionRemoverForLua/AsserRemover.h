@@ -60,9 +60,11 @@ inline int removeAsserFromDir(const std::filesystem::path& pathToDir) {
 	for (const std::filesystem::directory_entry& entry : luaRootDir_iter) {
 		const auto& path{ entry.path() };
 		if (std::filesystem::is_directory(path)) {
-			numAssers += removeAsserFromDir(path);
+			numAssers += removeAsserFromDir(path); // recursion
 		}
-		numAssers += removeAsserFromFile(entry.path());
+		else {
+			numAssers += removeAsserFromFile(entry.path());
+		}
 	}
 
 	return numAssers;
