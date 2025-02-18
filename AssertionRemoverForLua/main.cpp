@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 
 	fs::path pathToFile{ argv[1] };
 	pathToFile.make_preferred();
-	std::cout << "Preferred Path: " << pathToFile << '\n';
+	std::cout << "Preferred path: " << pathToFile << '\n';
 
 	if (!fs::exists(pathToFile)) {
 		std::cout << "Invalid path.\n";
